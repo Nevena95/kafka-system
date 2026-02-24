@@ -1,1 +1,8 @@
 rootProject.name = 'kafka-system'
+include 'producer', 'consumer'
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
