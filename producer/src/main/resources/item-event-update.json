@@ -1,0 +1,8 @@
+{
+  "id" : 123,
+  "eventType": "UPDATE",
+  "item": {
+    "id": 123,
+    "name": "Name1_update"
+  }
+}

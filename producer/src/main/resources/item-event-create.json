@@ -1,0 +1,8 @@
+{
+  "id": null,
+  "eventType": "CREATE",
+  "item": {
+    "id": 123,
+    "name": "Name1"
+  }
+}
