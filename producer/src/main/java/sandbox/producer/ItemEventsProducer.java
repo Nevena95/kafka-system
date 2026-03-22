@@ -13,7 +13,7 @@ import java.util.concurrent.CompletableFuture;
 
 @Slf4j
 @Component
-public class ItemsProducer {
+public class ItemEventsProducer {
 
     @Value("${spring.kafka.topic}")
     public String topic;
@@ -22,7 +22,7 @@ public class ItemsProducer {
 
     private final ObjectMapper objectMapper;
 
-    public ItemsProducer(KafkaTemplate<Integer, String> kafkaTemplate, ObjectMapper objectMapper) {
+    public ItemEventsProducer(KafkaTemplate<Integer, String> kafkaTemplate, ObjectMapper objectMapper) {
         this.kafkaTemplate = kafkaTemplate;
         this.objectMapper = objectMapper;
     }
@@ -49,6 +49,7 @@ public class ItemsProducer {
     }
 
     private void handleFailure(int key, String value, Throwable throwable) {
-        log.error("Error sending the message and the exception is {}", throwable.getMessage(), throwable);
+        log.error("Error sending the message for the key: {} and the value: {}, and the exception is {}",
+                key, value, throwable.getMessage(), throwable);
     }
 }

@@ -1,0 +1,8 @@
+context: "kafka"
+projects:
+  - name: "topics"
+    topics:
+      - name: "items"
+        config:
+          num.partitions: "3"
+          replication.factor: "2"
